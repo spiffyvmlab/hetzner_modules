@@ -1,0 +1,29 @@
+hcloud_token = "<your hetzner cloud token>"
+
+instance_type = "cx11"
+hostname = "my-terraform-test"
+image = "debian-11"
+location = "fsn1"
+datacenter = "fsn1-dc14"
+ssh_key_name = ""
+ssh_public_key = ""
+existing_ssh_key = "your-existing-ssh-key-in-hetzner-cloud-project"
+ipv4_enabled = true
+ipv6_enabled = false
+volume_size = 10
+volume_format = "ext4"
+static_ipv4 = false
+
+existing_firewall_name = "firewall-1"
+firewall_name = "my-terraform-test"
+firewall_rules = [
+  {
+    direction = "in"
+    name = "SSH"
+    protocol = "tcp"
+    port = "22"
+    source_ips = [
+        "0.0.0.0/0"
+    ]
+  }
+]
